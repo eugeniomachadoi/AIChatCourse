@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.dismiss) private var dismiss
     @Environment(AppState.self) private var appState
 
     var body: some View {
@@ -18,7 +19,11 @@ struct SettingsView: View {
 
     func onSignoutPressed() {
         // do some logic to sign user out of app
-        appState.updateViewState(showTabBarView: false)
+        dismiss()
+        Task {
+            try? await Task.sleep(for: .seconds(1))
+            appState.updateViewState(showTabBarView: false)
+        }
     }
 }
 
