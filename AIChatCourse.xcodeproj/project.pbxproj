@@ -102,6 +102,7 @@
 				FF4ADD692DD3B85B00DA0411 /* Sources */,
 				FF4ADD6A2DD3B85B00DA0411 /* Frameworks */,
 				FF4ADD6B2DD3B85B00DA0411 /* Resources */,
+				FF7D20A52DDBB8D000DC4E04 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -230,6 +231,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FF7D20A52DDBB8D000DC4E04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -z \"$CI\" ]]; then\n    if [[ \"$(uname -m)\" == arm64 ]]; then\n        export PATH=\"/opt/homebrew/bin:$PATH\"\n    fi\n    # Check if running in a SwiftUI preview\n    if [ \"$XCODE_RUNNING_FOR_PREVIEWS\" != \"1\" ]; then\n        if which swiftlint > /dev/null; then\n            swiftlint # Uncomment if you want to auto-fix: swiftlint --fix &&\n        else\n            echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n        fi\n    fi\nelse \n    # Running Xcode Cloud\n    echo \"Running in Xcode Cloud. Skipping SwiftLint.\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF4ADD692DD3B85B00DA0411 /* Sources */ = {
@@ -399,6 +422,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z2644G4B3W;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -433,6 +457,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z2644G4B3W;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
