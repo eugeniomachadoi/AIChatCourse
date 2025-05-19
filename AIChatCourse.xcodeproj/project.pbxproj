@@ -38,7 +38,12 @@
 				ContentView.swift,
 				Core/AppView/AppView.swift,
 				Core/AppView/AppViewBuilder.swift,
+				Core/Chats/ChatsView.swift,
+				Core/Explore/ExploreView.swift,
+				Core/Profile/ProfileView.swift,
 				Core/Root/LaunchScreen.storyboard,
+				Core/TabBar/TabBarView.swift,
+				Core/Welcome/WelcomeView.swift,
 			);
 			target = FF4ADD6C2DD3B85B00DA0411 /* AIChatCourse */;
 		};
@@ -264,7 +269,6 @@
 /* Begin PBXShellScriptBuildPhase section */
 		FF7D20A52DDBB8D000DC4E04 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
