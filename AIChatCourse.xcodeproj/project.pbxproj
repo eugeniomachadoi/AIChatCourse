@@ -29,12 +29,34 @@
 		FF4ADD842DD3B85D00DA0411 /* AIChatCourseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIChatCourseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		FF4ADD6F2DD3B85B00DA0411 /* AIChatCourse */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AIChatCourse;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FF7D20C52DDBC28500DC4E04 /* Exceptions for "AIChatCourse" folder in "AIChatCourse" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AIChatCourseApp.swift,
+				Assets.xcassets,
+				ContentView.swift,
+				Core/AppView/AppView.swift,
+				Core/AppView/AppViewBuilder.swift,
+				Core/Root/LaunchScreen.storyboard,
+			);
+			target = FF4ADD6C2DD3B85B00DA0411 /* AIChatCourse */;
 		};
+		FF7D20C62DDBC28500DC4E04 /* Exceptions for "AIChatCourse" folder in "AIChatCourseUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AIChatCourseApp.swift,
+				Assets.xcassets,
+				ContentView.swift,
+				Core/AppView/AppView.swift,
+				Core/AppView/AppViewBuilder.swift,
+				Core/Root/LaunchScreen.storyboard,
+			);
+			target = FF4ADD832DD3B85D00DA0411 /* AIChatCourseUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		FF4ADD7D2DD3B85D00DA0411 /* AIChatCourseTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AIChatCourseTests;
@@ -43,6 +65,15 @@
 		FF4ADD872DD3B85D00DA0411 /* AIChatCourseUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AIChatCourseUITests;
+			sourceTree = "<group>";
+		};
+		FF7D20BF2DDBC28500DC4E04 /* AIChatCourse */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				FF7D20C52DDBC28500DC4E04 /* Exceptions for "AIChatCourse" folder in "AIChatCourse" target */,
+				FF7D20C62DDBC28500DC4E04 /* Exceptions for "AIChatCourse" folder in "AIChatCourseUITests" target */,
+			);
+			path = AIChatCourse;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,10 +106,10 @@
 		FF4ADD642DD3B85B00DA0411 = {
 			isa = PBXGroup;
 			children = (
-				FF4ADD6F2DD3B85B00DA0411 /* AIChatCourse */,
 				FF4ADD7D2DD3B85D00DA0411 /* AIChatCourseTests */,
 				FF4ADD872DD3B85D00DA0411 /* AIChatCourseUITests */,
 				FF4ADD6E2DD3B85B00DA0411 /* Products */,
+				FF7D20BF2DDBC28500DC4E04 /* AIChatCourse */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +138,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				FF4ADD6F2DD3B85B00DA0411 /* AIChatCourse */,
 			);
 			name = AIChatCourse;
 			packageProductDependencies = (
@@ -156,6 +184,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				FF4ADD872DD3B85D00DA0411 /* AIChatCourseUITests */,
+				FF7D20BF2DDBC28500DC4E04 /* AIChatCourse */,
 			);
 			name = AIChatCourseUITests;
 			packageProductDependencies = (
