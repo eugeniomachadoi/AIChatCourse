@@ -1,18 +1,41 @@
-//
-//  OnboardingIntroView.swift
-//  AIChatCourse
-//
-//  Created by Eugênio Inocêncio on 21/05/2025.
-//
-
 import SwiftUI
 
 struct OnboardingIntroView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Group {
+                Text("Make your ") +
+                Text("avatars ")
+                    .foregroundStyle(.accent)
+                    .fontWeight(.semibold)
+                +
+                Text(" and chat with them! \n\nHave ")
+                +
+                Text("real conversations ")
+                    .foregroundStyle(.accent)
+                    .fontWeight(.semibold)
+                +
+                Text("with AI generated responses.")
+            }
+            .baselineOffset(6)
+            .frame(maxHeight: .infinity)
+            .padding(24)
+
+            NavigationLink {
+                OnboardingColorView()
+            } label: {
+                Text("Continue")
+                    .callToActionButton()
+            }
+        }
+        .padding(24)
+        .font(.title3)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
-    OnboardingIntroView()
+    NavigationStack {
+        OnboardingIntroView()
+    }
 }
