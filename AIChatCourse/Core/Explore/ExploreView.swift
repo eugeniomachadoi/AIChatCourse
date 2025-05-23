@@ -1,18 +1,18 @@
-//
-//  ExploreView.swift
-//  AIChatCourse
-//
-//  Created by Eugênio Inocêncio on 19/05/2025.
-//
-
 import SwiftUI
 
 struct ExploreView: View {
+    let avatar = AvatarModel.mock
+
     var body: some View {
         NavigationStack {
-            Text("Explore")
-                .navigationTitle("Explore")
+            HeroCellView(
+                title: avatar.name,
+                subtitle: avatar.characterDescription,
+                imageName: avatar.profileImageName
+            )
+            .frame(height: 200)
         }
+        .navigationTitle("Explore")
     }
 }
 
