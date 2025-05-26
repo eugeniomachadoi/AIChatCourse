@@ -39,6 +39,8 @@
 			membershipExceptions = (
 				Assets.xcassets,
 				Components/Images/ImageLoaderView.swift,
+				Components/Views/CarouselView.swift,
+				Components/Views/CategoryCellView.swift,
 				Components/Views/HeroCellView.swift,
 				Core/AIChatCourseApp.swift,
 				Core/AppView/AppState.swift,

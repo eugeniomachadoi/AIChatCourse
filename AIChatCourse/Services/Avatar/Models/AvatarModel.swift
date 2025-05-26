@@ -1,6 +1,6 @@
 import Foundation
 
-struct AvatarModel {
+struct AvatarModel: Hashable {
     let avatarId: String
     let name: String?
     let characterOption: CharacterOption?
@@ -103,7 +103,8 @@ struct AvatarDescriptionBuilder {
         self.characterLocation = avatar.characterLocation ?? .default
     }
 }
-enum CharacterOption: String {
+
+enum CharacterOption: String, CaseIterable, Hashable {
     case man, woman,
          alien, dog,
          cat
