@@ -43,6 +43,8 @@
 				"Components/ViewModifiers/View+Extensions.swift",
 				Components/Views/CarouselView.swift,
 				Components/Views/CategoryCellView.swift,
+				Components/Views/ChatRowCellView.swift,
+				Components/Views/ChatRowCellViewBuilder.swift,
 				Components/Views/CustomListCellView.swift,
 				Components/Views/HeroCellView.swift,
 				Core/AIChatCourseApp.swift,
