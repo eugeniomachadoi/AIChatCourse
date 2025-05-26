@@ -1,17 +1,16 @@
-//
-//  ChatsView.swift
-//  AIChatCourse
-//
-//  Created by Eugênio Inocêncio on 19/05/2025.
-//
-
 import SwiftUI
 
 struct ChatsView: View {
+    @State private var chats: [ChatModel] = ChatModel.mocks
+
     var body: some View {
         NavigationStack {
-            Text("Chats")
-                .navigationTitle("Chats")
+            List {
+                ForEach(chats) { chat in
+                    Text(chat.id)
+                }
+            }
+            .navigationTitle("Chats")
         }
     }
 }
