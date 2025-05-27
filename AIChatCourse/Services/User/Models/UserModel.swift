@@ -35,7 +35,7 @@ struct UserModel {
         let now = Date()
         return [
             UserModel(
-                userId: "user_001",
+                userId: "1",
                 dateCreated: now,
                 didCompleteOnboarding: true,
                 profileColorHex: "#33C1FF"
