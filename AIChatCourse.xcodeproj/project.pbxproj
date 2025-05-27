@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */; };
+		FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = FFC852392DE60093004341EF /* SwiftfulUtilities */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Components/Buttons/SignInWithAppleButtonView.swift,
 				Components/Images/ImageLoaderView.swift,
 				Components/ViewModifiers/ButtonViewModifiers.swift,
 				"Components/ViewModifiers/View+Extensions.swift",
@@ -52,6 +54,7 @@
 				Core/AppView/AppView.swift,
 				Core/AppView/AppViewBuilder.swift,
 				Core/Chats/ChatsView.swift,
+				Core/CreateAccount/CreateAccountView.swift,
 				Core/Explore/ExploreView.swift,
 				Core/Onboarding/ColorView/OnboardingColorView.swift,
 				Core/Onboarding/CompletedView/OnboardingCompletedView.swift,
@@ -68,6 +71,7 @@
 				Services/Chat/Models/ChatModel.swift,
 				Services/User/Models/UserModel.swift,
 				Utilities/Constants.swift,
+				Utilities/Utilities.swift,
 			);
 			target = FF4ADD6C2DD3B85B00DA0411 /* AIChatCourse */;
 		};
@@ -113,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */,
+				FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +185,7 @@
 			name = AIChatCourse;
 			packageProductDependencies = (
 				FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */,
+				FFC852392DE60093004341EF /* SwiftfulUtilities */,
 			);
 			productName = AIChatCourse;
 			productReference = FF4ADD6D2DD3B85B00DA0411 /* AIChatCourse.app */;
@@ -266,6 +272,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FFAD21982DDD0AF800525298 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				FFC852382DE60068004341EF /* XCLocalSwiftPackageReference "../../Downloads/SwiftfulUtilities-main" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FF4ADD6E2DD3B85B00DA0411 /* Products */;
@@ -666,6 +673,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		FFC852382DE60068004341EF /* XCLocalSwiftPackageReference "../../Downloads/SwiftfulUtilities-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Downloads/SwiftfulUtilities-main";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		FFAD21982DDD0AF800525298 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -682,6 +696,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAD21982DDD0AF800525298 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		FFC852392DE60093004341EF /* SwiftfulUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftfulUtilities;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
