@@ -39,8 +39,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				Components/Alerts/AnyAppAlert.swift,
 				Components/Buttons/SignInWithAppleButtonView.swift,
 				Components/Images/ImageLoaderView.swift,
+				Components/Models/ModalSupportView.swift,
+				Components/Models/ProfileModalView.swift,
 				Components/ViewModifiers/ButtonViewModifiers.swift,
 				"Components/ViewModifiers/View+Extensions.swift",
 				Components/Views/AsyncCallToActionButton.swift,
