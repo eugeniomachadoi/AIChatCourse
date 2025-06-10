@@ -70,6 +70,7 @@
 				Core/Onboarding/IntroView/OnboardingIntroView.swift,
 				Core/Profile/ProfileView.swift,
 				Core/Root/LaunchScreen.storyboard,
+				Core/Routing/NavigationPathOption.swift,
 				Core/Settings/SettingsView.swift,
 				Core/TabBar/TabBarView.swift,
 				Core/Welcome/WelcomeView.swift,

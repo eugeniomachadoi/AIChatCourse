@@ -14,13 +14,13 @@ enum CharacterOption: String, CaseIterable, Hashable {
         case .man:
             return "men"
         case .woman:
-            return "momen"
+            return "women"
         case .alien:
-            return "mliens"
+            return "aliens"
         case .dog:
-            return "mogs"
+            return "dogs"
         case .cat:
-            return "mats"
+            return "cats"
         }
     }
 
