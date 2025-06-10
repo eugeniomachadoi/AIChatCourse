@@ -59,6 +59,7 @@
 				Core/AppView/AppState.swift,
 				Core/AppView/AppView.swift,
 				Core/AppView/AppViewBuilder.swift,
+				Core/CategoryList/CategoryListView.swift,
 				Core/Chat/ChatView.swift,
 				Core/Chats/ChatsView.swift,
 				Core/CreateAccount/CreateAccountView.swift,
