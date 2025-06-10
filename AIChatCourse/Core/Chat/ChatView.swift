@@ -5,8 +5,11 @@ struct ChatView: View {
     @State private var avatar: AvatarModel? = .mock
     @State private var currentUser: UserModel? = .mock
     @State private var textFieldText: String = ""
-    @State private var showChatSettings: Bool = false
     @State private var scrollToPosition: String?
+
+    @State private var showAlert: AnyAppAlert?
+    @State private var showChatSettings: AnyAppAlert?
+    @State private var showProfileModal: Bool = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -24,16 +27,12 @@ struct ChatView: View {
                     }
             }
         }
-        .confirmationDialog("", isPresented: $showChatSettings) {
-            Button("Report User / Chat", role: .destructive) {
-
+        .showCustomAlert(type: .confirmationDialog, alert: $showChatSettings)
+        .showCustomAlert(alert: $showAlert)
+        .showModal(showModal: $showProfileModal) {
+            if let avatar {
+              profileModal(avatar: avatar)
             }
-
-            Button("Delete Chat", role: .destructive) {
-
-            }
-        } message: {
-            Text("What would you like to do?")
         }
     }
 
@@ -45,7 +44,8 @@ struct ChatView: View {
                     ChatViewBubbleViewBuilder(
                         message: message,
                         isCurrentUser: isCurrentUser,
-                        imageName: isCurrentUser ? nil : avatar?.profileImageName
+                        imageName: isCurrentUser ? nil : avatar?.profileImageName,
+                        onImagePressed: onAvatarImagePressed
                     )
                     .id(message.id)
                 }
@@ -60,23 +60,43 @@ struct ChatView: View {
         .animation(.default, value: scrollToPosition)
     }
 
+    private func profileModal(avatar: AvatarModel) -> some View {
+        ProfileModalView(
+            imageName: avatar.profileImageName,
+            title: avatar.name,
+            subtitle: avatar.characterOption?.rawValue.capitalized,
+            headline: avatar.characterDescription,
+            onXMarkPressed: {
+                showProfileModal = false
+            }
+        )
+        .padding(40)
+        .transition(.slide)
+    }
+
     private func onSendMessagePressed() {
         guard let currentUser else { return }
         let content = textFieldText
 
-        let message = ChatMessageModel(
-            id: UUID().uuidString,
-            chatId: UUID().uuidString,
-            authorId: currentUser.userId,
-            content: content,
-            seenByIds: nil,
-            dateCreated: .now
-        )
-        chatMessages.append(message)
+        do {
+            try TextValidationHelper.checkIfTextIsValid(text: content)
 
-        scrollToPosition = message.id
+            let message = ChatMessageModel(
+                id: UUID().uuidString,
+                chatId: UUID().uuidString,
+                authorId: currentUser.userId,
+                content: content,
+                seenByIds: nil,
+                dateCreated: .now
+            )
+            chatMessages.append(message)
 
-        textFieldText = ""
+            scrollToPosition = message.id
+
+            textFieldText = ""
+        } catch {
+            showAlert = AnyAppAlert(error: error)
+        }
     }
 
     private var textFieldSection: some View {
@@ -110,7 +130,26 @@ struct ChatView: View {
     }
 
     private func onChatSettingsPressed() {
-        showChatSettings = true
+        showChatSettings = AnyAppAlert(
+            title: "",
+            subtitle: "What would you like to do?",
+            buttons: {
+                AnyView(
+                    Group {
+                        Button("Report User / Chat", role: .destructive) {
+
+                        }
+                        Button("Delete chat", role: .destructive) {
+
+                        }
+                    }
+                )
+            }
+        )
+    }
+
+    private func onAvatarImagePressed() {
+        showProfileModal = true
     }
 }
 

@@ -9,6 +9,21 @@ enum CharacterOption: String, CaseIterable, Hashable {
         .man
     }
 
+    var plural: String {
+        switch self {
+        case .man:
+            return "men"
+        case .woman:
+            return "momen"
+        case .alien:
+            return "mliens"
+        case .dog:
+            return "mogs"
+        case .cat:
+            return "mats"
+        }
+    }
+
     var startsWithAVowel: Bool {
         switch self {
         case .alien:
