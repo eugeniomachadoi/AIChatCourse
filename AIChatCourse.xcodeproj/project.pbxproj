@@ -79,6 +79,7 @@
 				"Extensions/Color+EXT.swift",
 				"Extensions/Date+EXT.swift",
 				"GoogleService-Info.plist",
+				Services/Auth/FirebaseAuthService.swift,
 				Services/Avatar/Models/AvatarAttributes.swift,
 				Services/Avatar/Models/AvatarModel.swift,
 				Services/Chat/Models/ChatMessageModel.swift,
