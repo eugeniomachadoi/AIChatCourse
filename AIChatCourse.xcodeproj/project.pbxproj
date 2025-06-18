@@ -10,6 +10,7 @@
 		FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */; };
 		FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FF829F342DFB477700B38929 /* FirebaseAuth */; };
 		FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = FFC852392DE60093004341EF /* SwiftfulUtilities */; };
+		FFF2A9922E030A8D00EE408E /* SignInAppleAsync in Frameworks */ = {isa = PBXBuildFile; productRef = FFF2A9912E030A8D00EE408E /* SignInAppleAsync */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 				"Extensions/Date+EXT.swift",
 				"GoogleService-Info.plist",
 				Services/Auth/FirebaseAuthService.swift,
+				"Services/Auth/Models/UserAuthInfo+Firebase.swift",
+				Services/Auth/Models/UserAuthView.swift,
 				Services/Avatar/Models/AvatarAttributes.swift,
 				Services/Avatar/Models/AvatarModel.swift,
 				Services/Chat/Models/ChatMessageModel.swift,
@@ -133,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFF2A9922E030A8D00EE408E /* SignInAppleAsync in Frameworks */,
 				FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */,
 				FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */,
 				FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */,
@@ -205,6 +209,7 @@
 				FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */,
 				FFC852392DE60093004341EF /* SwiftfulUtilities */,
 				FF829F342DFB477700B38929 /* FirebaseAuth */,
+				FFF2A9912E030A8D00EE408E /* SignInAppleAsync */,
 			);
 			productName = AIChatCourse;
 			productReference = FF4ADD6D2DD3B85B00DA0411 /* AIChatCourse.app */;
@@ -293,6 +298,7 @@
 				FFAD21982DDD0AF800525298 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				FFC852382DE60068004341EF /* XCLocalSwiftPackageReference "../../Downloads/SwiftfulUtilities-main" */,
 				FF829F332DFB477700B38929 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FFF2A9902E030A6F00EE408E /* XCLocalSwiftPackageReference "../../Downloads/SignInAppleAsync-main" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FF4ADD6E2DD3B85B00DA0411 /* Products */;
@@ -515,9 +521,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AIChatCourse/AIChatCourse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z2644G4B3W;
+				DEVELOPMENT_TEAM = L3UE6KVGUH;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -550,9 +557,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AIChatCourse/AIChatCourse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z2644G4B3W;
+				DEVELOPMENT_TEAM = L3UE6KVGUH;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -698,6 +706,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../Downloads/SwiftfulUtilities-main";
 		};
+		FFF2A9902E030A6F00EE408E /* XCLocalSwiftPackageReference "../../Downloads/SignInAppleAsync-main" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../Downloads/SignInAppleAsync-main";
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -733,6 +745,10 @@
 		FFC852392DE60093004341EF /* SwiftfulUtilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftfulUtilities;
+		};
+		FFF2A9912E030A8D00EE408E /* SignInAppleAsync */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SignInAppleAsync;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
