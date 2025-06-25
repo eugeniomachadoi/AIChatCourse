@@ -10,6 +10,7 @@
 		FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */; };
 		FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FF829F342DFB477700B38929 /* FirebaseAuth */; };
 		FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = FFC852392DE60093004341EF /* SwiftfulUtilities */; };
+		FFD6AB862E0C7BC600A2EBB2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FFD6AB852E0C7BC600A2EBB2 /* FirebaseFirestore */; };
 		FFF2A9922E030A8D00EE408E /* SignInAppleAsync in Frameworks */ = {isa = PBXBuildFile; productRef = FFF2A9912E030A8D00EE408E /* SignInAppleAsync */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 				Services/Chat/Models/ChatMessageModel.swift,
 				Services/Chat/Models/ChatModel.swift,
 				Services/User/Models/UserModel.swift,
+				Services/User/UserManager.swift,
 				Utilities/Constants.swift,
 				Utilities/TextValidationHelper.swift,
 				Utilities/Utilities.swift,
@@ -142,6 +144,7 @@
 				FFF2A9922E030A8D00EE408E /* SignInAppleAsync in Frameworks */,
 				FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */,
 				FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */,
+				FFD6AB862E0C7BC600A2EBB2 /* FirebaseFirestore in Frameworks */,
 				FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +216,7 @@
 				FFC852392DE60093004341EF /* SwiftfulUtilities */,
 				FF829F342DFB477700B38929 /* FirebaseAuth */,
 				FFF2A9912E030A8D00EE408E /* SignInAppleAsync */,
+				FFD6AB852E0C7BC600A2EBB2 /* FirebaseFirestore */,
 			);
 			productName = AIChatCourse;
 			productReference = FF4ADD6D2DD3B85B00DA0411 /* AIChatCourse.app */;
@@ -748,6 +752,11 @@
 		FFC852392DE60093004341EF /* SwiftfulUtilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftfulUtilities;
+		};
+		FFD6AB852E0C7BC600A2EBB2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF829F332DFB477700B38929 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		FFF2A9912E030A8D00EE408E /* SignInAppleAsync */ = {
 			isa = XCSwiftPackageProductDependency;
