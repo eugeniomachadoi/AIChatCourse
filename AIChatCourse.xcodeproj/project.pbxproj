@@ -80,6 +80,7 @@
 				"Extensions/Color+EXT.swift",
 				"Extensions/Date+EXT.swift",
 				"GoogleService-Info.plist",
+				Services/Auth/AuthManager.swift,
 				"Services/Auth/Models/UserAuthInfo+Firebase.swift",
 				Services/Auth/Models/UserAuthView.swift,
 				Services/Auth/Services/AuthService.swift,
