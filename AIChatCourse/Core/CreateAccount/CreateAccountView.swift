@@ -40,7 +40,8 @@ struct CreateAccountView: View {
                 let result = try await authManager.signInApple()
 
                 print("Did sign in with apple! \(result.user.uid)")
-                try await userManager.logIn(auth: result.user, isNewUser: result.isNewUser)
+                try await userManager.logIn(auth: result.user,
+                                            isNewUser: result.isNewUser)
                 print("Did log in")
 
                 onDidSignIn?(result.isNewUser)
