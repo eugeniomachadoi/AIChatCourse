@@ -1,4 +1,5 @@
 import OpenAI
+import SwiftUI
 
 struct OpenAIService: AIService {
     var openAI: OpenAI {
