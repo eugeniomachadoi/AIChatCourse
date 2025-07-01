@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */; };
+		FF679F022E1448A00008B219 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FF679F012E1448A00008B219 /* OpenAI */; };
 		FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FF829F342DFB477700B38929 /* FirebaseAuth */; };
 		FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = FFC852392DE60093004341EF /* SwiftfulUtilities */; };
 		FFCE7F212E0DB5A500BFE868 /* SwiftfulFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FFCE7F202E0DB5A500BFE868 /* SwiftfulFirestore */; };
@@ -81,7 +82,12 @@
 				"Extensions/Binding+EXT.swift",
 				"Extensions/Color+EXT.swift",
 				"Extensions/Date+EXT.swift",
+				Extensions/FileManager.swift,
 				"GoogleService-Info.plist",
+				Services/AI/AIManager.swift,
+				Services/AI/Services/AIService.swift,
+				Services/AI/Services/MockAIService.swift,
+				Services/AI/Services/OpenAIService.swift,
 				Services/Auth/AuthManager.swift,
 				"Services/Auth/Models/UserAuthInfo+Firebase.swift",
 				Services/Auth/Models/UserAuthView.swift,
@@ -93,8 +99,16 @@
 				Services/Chat/Models/ChatMessageModel.swift,
 				Services/Chat/Models/ChatModel.swift,
 				Services/User/Models/UserModel.swift,
+				Services/User/Services/Local/FileManagerUserPersistance.swift,
+				Services/User/Services/Local/LocalUserPersistance.swift,
+				Services/User/Services/Local/MockUserPersistance.swift,
+				Services/User/Services/Remote/FirebaseUserService.swift,
+				Services/User/Services/Remote/MockUserService.swift,
+				Services/User/Services/Remote/RemoteUserService.swift,
+				Services/User/Services/UserServices.swift,
 				Services/User/UserManager.swift,
 				Utilities/Constants.swift,
+				Utilities/Keys.swift,
 				Utilities/TextValidationHelper.swift,
 				Utilities/Utilities.swift,
 			);
@@ -146,6 +160,7 @@
 				FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */,
 				FFCE7F212E0DB5A500BFE868 /* SwiftfulFirestore in Frameworks */,
 				FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */,
+				FF679F022E1448A00008B219 /* OpenAI in Frameworks */,
 				FFD6AB862E0C7BC600A2EBB2 /* FirebaseFirestore in Frameworks */,
 				FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */,
 			);
@@ -220,6 +235,7 @@
 				FFF2A9912E030A8D00EE408E /* SignInAppleAsync */,
 				FFD6AB852E0C7BC600A2EBB2 /* FirebaseFirestore */,
 				FFCE7F202E0DB5A500BFE868 /* SwiftfulFirestore */,
+				FF679F012E1448A00008B219 /* OpenAI */,
 			);
 			productName = AIChatCourse;
 			productReference = FF4ADD6D2DD3B85B00DA0411 /* AIChatCourse.app */;
@@ -310,6 +326,7 @@
 				FF829F332DFB477700B38929 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				FFF2A9902E030A6F00EE408E /* XCLocalSwiftPackageReference "../../Downloads/SignInAppleAsync-main" */,
 				FFCE7F1F2E0DB5A500BFE868 /* XCRemoteSwiftPackageReference "SwiftfulFirestore" */,
+				FF679F002E1448A00008B219 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FF4ADD6E2DD3B85B00DA0411 /* Products */;
@@ -724,6 +741,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FF679F002E1448A00008B219 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.4;
+			};
+		};
 		FF829F332DFB477700B38929 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -755,6 +780,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFAD21982DDD0AF800525298 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		FF679F012E1448A00008B219 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF679F002E1448A00008B219 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
 		};
 		FF829F342DFB477700B38929 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
