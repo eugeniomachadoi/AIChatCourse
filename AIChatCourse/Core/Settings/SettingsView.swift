@@ -132,7 +132,7 @@ struct SettingsView: View {
         Task {
             do {
                 try authManager.signOut()
-                try userManager.signOut()
+                userManager.signOut()
 
                 await dismissScreen()
             } catch {

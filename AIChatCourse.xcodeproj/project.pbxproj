@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF3B6EA52E159DC200DF9B60 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FF3B6EA42E159DC200DF9B60 /* FirebaseStorage */; };
 		FF43D9402DDD0DC000B90A31 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */; };
 		FF679F022E1448A00008B219 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = FF679F012E1448A00008B219 /* OpenAI */; };
 		FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FF829F342DFB477700B38929 /* FirebaseAuth */; };
@@ -94,10 +95,12 @@
 				Services/Auth/Services/AuthService.swift,
 				Services/Auth/Services/FirebaseAuthService.swift,
 				Services/Auth/Services/MockAuthService.swift,
+				Services/Avatar/AvatarManager.swift,
 				Services/Avatar/Models/AvatarAttributes.swift,
 				Services/Avatar/Models/AvatarModel.swift,
 				Services/Chat/Models/ChatMessageModel.swift,
 				Services/Chat/Models/ChatModel.swift,
+				Services/ImageUpload/Services/FirebaseImageUploadService.swift,
 				Services/User/Models/UserModel.swift,
 				Services/User/Services/Local/FileManagerUserPersistance.swift,
 				Services/User/Services/Local/LocalUserPersistance.swift,
@@ -161,6 +164,7 @@
 				FFCE7F212E0DB5A500BFE868 /* SwiftfulFirestore in Frameworks */,
 				FF829F352DFB477700B38929 /* FirebaseAuth in Frameworks */,
 				FF679F022E1448A00008B219 /* OpenAI in Frameworks */,
+				FF3B6EA52E159DC200DF9B60 /* FirebaseStorage in Frameworks */,
 				FFD6AB862E0C7BC600A2EBB2 /* FirebaseFirestore in Frameworks */,
 				FFC8523A2DE60093004341EF /* SwiftfulUtilities in Frameworks */,
 			);
@@ -236,6 +240,7 @@
 				FFD6AB852E0C7BC600A2EBB2 /* FirebaseFirestore */,
 				FFCE7F202E0DB5A500BFE868 /* SwiftfulFirestore */,
 				FF679F012E1448A00008B219 /* OpenAI */,
+				FF3B6EA42E159DC200DF9B60 /* FirebaseStorage */,
 			);
 			productName = AIChatCourse;
 			productReference = FF4ADD6D2DD3B85B00DA0411 /* AIChatCourse.app */;
@@ -776,6 +781,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FF3B6EA42E159DC200DF9B60 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF829F332DFB477700B38929 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		FF43D93F2DDD0DC000B90A31 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FFAD21982DDD0AF800525298 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
