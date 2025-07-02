@@ -3,7 +3,7 @@ protocol UserServices {
     var local: LocalUserPersistance { get }
 }
 
-struct MockUserServices : UserServices {
+struct MockUserServices: UserServices {
     let remote: RemoteUserService
     let local: LocalUserPersistance
 
