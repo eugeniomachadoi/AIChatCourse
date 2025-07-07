@@ -58,7 +58,6 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
         mocks[0]
     }
 
-
     static var mocks: [Self] {
         [AvatarModel(
             avatarId: UUID().uuidString,
