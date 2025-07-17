@@ -14,6 +14,7 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
     private(set) var profileImageName: String?
     let authorId: String?
     let dateCreated: Date?
+    let clickCount: Int?
 
     init(
         avatarId: String,
@@ -23,7 +24,8 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
         characterLocation: CharacterLocation? = nil,
         profileImageName: String? = nil,
         authorId: String? = nil,
-        dateCreated: Date? = nil
+        dateCreated: Date? = nil,
+        clickCount: Int? = nil
     ) {
         self.avatarId = avatarId
         self.name = name
@@ -33,6 +35,7 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
         self.profileImageName = profileImageName
         self.authorId = authorId
         self.dateCreated = dateCreated
+        self.clickCount = clickCount
     }
 
     var characterDescription: String {
@@ -52,6 +55,7 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
         case profileImageName = "profile_image_name"
         case authorId = "author_id"
         case dateCreated = "date_created"
+        case clickCount = "click_count"
     }
 
     static var mock: Self {
@@ -67,7 +71,8 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
             characterLocation: .park,
             profileImageName: Constants.randomImage,
             authorId: UUID().uuidString,
-            dateCreated: .now
+            dateCreated: .now,
+            clickCount: 5
         ),
          AvatarModel(
              avatarId: UUID().uuidString,
@@ -77,7 +82,8 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
              characterLocation: .forest,
              profileImageName: Constants.randomImage,
              authorId: UUID().uuidString,
-             dateCreated: .now
+             dateCreated: .now,
+             clickCount: 100
          ),
          AvatarModel(
              avatarId: UUID().uuidString,
@@ -87,7 +93,8 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
              characterLocation: .museum,
              profileImageName: Constants.randomImage,
              authorId: UUID().uuidString,
-             dateCreated: .now
+             dateCreated: .now,
+             clickCount: 10
          ),
          AvatarModel(
              avatarId: UUID().uuidString,
@@ -97,7 +104,8 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
              characterLocation: .park,
              profileImageName: Constants.randomImage,
              authorId: UUID().uuidString,
-             dateCreated: .now
+             dateCreated: .now,
+             clickCount: 50
          )]
     }
 }

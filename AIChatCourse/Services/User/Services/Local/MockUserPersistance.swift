@@ -1,4 +1,4 @@
-struct MockUserPersistance: LocalUserPersistance {
+struct MockUserPersistence: LocalUserPersistence {
     let currentUser: UserModel?
 
     init(user: UserModel? = nil) {
