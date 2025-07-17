@@ -1,5 +1,5 @@
 @MainActor
-struct MockLocalAvatarPersistance: LocalAvatarPersistance {
+struct MockLocalAvatarPersistence: LocalAvatarPersistence {
     func addRecentAvatar(avatar: AvatarModel) throws {
 
     }

@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-struct SwiftDataLocalAvatarPersistance: LocalAvatarPersistance {
+struct SwiftDataLocalAvatarPersistence: LocalAvatarPersistence {
     private let container: ModelContainer
     private var mainContext: ModelContext {
         container.mainContext
