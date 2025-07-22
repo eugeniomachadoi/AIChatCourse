@@ -106,6 +106,7 @@
 				Services/Avatar/Services/Remote/FirebaseAvatarService.swift,
 				Services/Avatar/Services/Remote/MockAvatarService.swift,
 				Services/Avatar/Services/Remote/RemoteAvatarService.swift,
+				Services/Chat/ChatManager.swift,
 				Services/Chat/Models/ChatMessageModel.swift,
 				Services/Chat/Models/ChatModel.swift,
 				Services/ImageUpload/Services/FirebaseImageUploadService.swift,
