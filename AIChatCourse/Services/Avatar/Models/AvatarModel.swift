@@ -5,7 +5,7 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
     var id: String {
         avatarId
     }
-
+    
     let avatarId: String
     let name: String?
     let characterOption: CharacterOption?
@@ -15,7 +15,7 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
     let authorId: String?
     let dateCreated: Date?
     let clickCount: Int?
-
+    
     init(
         avatarId: String,
         name: String? = nil,
@@ -37,15 +37,15 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
         self.dateCreated = dateCreated
         self.clickCount = clickCount
     }
-
+    
     var characterDescription: String {
         AvatarDescriptionBuilder(avatar: self).characterDescription
     }
-
+    
     mutating func updateProfileImage(imageName: String) {
         profileImageName = imageName
     }
-
+    
     enum CodingKeys: String, CodingKey {
         case avatarId = "avatar_id"
         case name
@@ -56,6 +56,21 @@ struct AvatarModel: Hashable, Codable, StringIdentifiable {
         case authorId = "author_id"
         case dateCreated = "date_created"
         case clickCount = "click_count"
+    }
+    
+    static func newAvatar(name: String, option: CharacterOption, action: CharacterAction, location: CharacterLocation, authorId: String) -> Self {
+        AvatarModel(
+            avatarId: UUID().uuidString,
+            name: name,
+            characterOption: option,
+            characterAction: action,
+            characterLocation: location,
+            profileImageName: nil,
+            authorId: authorId,
+            dateCreated: .now,
+            clickCount: 0
+        )
+
     }
 
     static var mock: Self {

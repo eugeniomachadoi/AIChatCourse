@@ -9,6 +9,6 @@ struct MockAIService: AIService {
     func generateText(chats: [AIChatModel]) async throws -> AIChatModel {
         try await Task.sleep(for: .seconds(2))
 
-        return AIChatModel(role: .assistant, content: "This is returned message from AI.")
+        return AIChatModel(role: .assistant, message: "This is returned message from AI.")
     }
 }
