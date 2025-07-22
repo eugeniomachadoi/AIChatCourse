@@ -15,7 +15,6 @@ struct MockAvatarService: RemoteAvatarService {
         if showError {
             throw URLError(.unknown)
         }
-
     }
 
     func createAvatar(avatar: AvatarModel, image: UIImage) async throws {
